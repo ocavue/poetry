@@ -502,7 +502,7 @@ class PyPiRepository(Repository):
             return self._inspector.inspect_sdist(filepath)
 
     def _download(self, url, dest):  # type: (str, str) -> None
-        print('url:', url)
+        print("url:", url)
         r = get(url, stream=True)
         r.raise_for_status()
 
