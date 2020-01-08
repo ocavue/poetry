@@ -183,12 +183,22 @@ Only the name and a version string are required in this case.
 requests = "^2.13.0"
 ```
 
-If you want to use a private repository, you can add it to your `pyproject.toml` file, like so:
+If you want to use a private repository, you can add `[[tool.poetry.source]]` to your `pyproject.toml` file, like so:
 
 ```toml
 [[tool.poetry.source]]
+name = 'mirror'
+url = 'https://pypi.example.com/simple'
+default =
+secondary =
+
+[[tool.poetry.source]]
 name = 'private'
-url = 'http://example.com/simple'
+url = 'http://pypi.example.com/simple'
+
+
+[tool.poetry.dependencies]
+requests = {"version" = "^2.13.0", "source" = "mirror"
 ```
 
 !!!note
