@@ -549,7 +549,7 @@ class Installer:
         meta = r.info()
         size = int(meta["Content-Length"])
         current = 0
-        block_size = 512
+        block_size = 256
 
         print(
             "  - Downloading {} ({:.2f}MB)".format(
